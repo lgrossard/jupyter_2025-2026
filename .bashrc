@@ -131,7 +131,10 @@ echo -e "\e[0m"
 echo -e ""
 echo
 
-cd ~/work
+if [ -d "$HOME/work" ]; then
+  cd "$HOME/work" || printf 'Impossible de se placer dans le dossier %s\n' "$HOME/work"
+fi
+
 if [[ ! -d informatique_BUT1 ]]
 then
     echo -e "\e[38;5;69mTéléchargement des fichiers du cours d'informatique...\e[0m"
