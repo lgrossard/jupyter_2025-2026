@@ -131,6 +131,8 @@ echo -e "\e[0m"
 echo -e ""
 echo
 
+cd
+
 if [[ -d "$HOME/work" ]]
 then
   cd "$HOME/work" || printf 'Impossible de se placer dans le dossier %s\n' "$HOME/work"
@@ -166,8 +168,8 @@ then
 else
     cd informatique_BUT1
     echo -e "\e[38;5;69mMise à jour des fichiers...\e[0m"
-    git checkout HEAD .
-    git pull
+    # git checkout HEAD .
+    git fetch && git reset --hard
     echo
     echo -e "\e[38;5;83mLe cours est à jour\e[0m"
     echo "Vous pouvez fermer cet onglet"
