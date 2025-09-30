@@ -145,7 +145,10 @@ then
 
     mv ~/.bashrc ~/.bashrc-old
     # jupyter.unilim.fr :
+    if [[ -d "$HOME/work" ]]
+    then
     ln -s ~/work/informatique_BUT1/.bashrc ~/.bashrc
+    fi
     # https://jupyterhub.intranet.unilim.fr/
     ln -s ~/informatique_BUT1/.bashrc ~/.bash_profile
     mkdir personnel
