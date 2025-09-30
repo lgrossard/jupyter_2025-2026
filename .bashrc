@@ -140,7 +140,10 @@ then
     mv jupyter_2025-2026 informatique_BUT1
 
     mv ~/.bashrc ~/.bashrc-old
+    # jupyter.unilim.fr :
     ln -s ~/work/informatique_BUT1/.bashrc ~/.bashrc
+    # https://jupyterhub.intranet.unilim.fr/
+    ln -s ~/informatique_BUT1/.bashrc ~/.bash_profile
     mkdir personnel
     cd informatique_BUT1
     git checkout main
