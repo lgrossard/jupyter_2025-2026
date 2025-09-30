@@ -143,7 +143,10 @@ then
     git clone https://github.com/lgrossard/jupyter_2025-2026.git
     mv jupyter_2025-2026 informatique_BUT1
 
-    mv ~/.bashrc ~/.bashrc-old
+    if [[ -f ~/.bashrc ]]
+    then
+        mv ~/.bashrc ~/.bashrc-old
+    fi
     # jupyter.unilim.fr :
     if [[ -d "$HOME/work" ]]
     then
