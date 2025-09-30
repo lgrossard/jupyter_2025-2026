@@ -171,6 +171,6 @@ else
     echo
     echo -e "\e[38;5;83mLe cours est à jour\e[0m"
     echo "Vous pouvez fermer cet onglet"
-    echo
-    cd ..
+    # echo
+    # cd ..
 fi
