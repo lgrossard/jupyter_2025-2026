@@ -131,7 +131,8 @@ echo -e "\e[0m"
 echo -e ""
 echo
 
-if [ -d "$HOME/work" ]; then
+if [[ -d "$HOME/work" ]]
+then
   cd "$HOME/work" || printf 'Impossible de se placer dans le dossier %s\n' "$HOME/work"
 fi
 
