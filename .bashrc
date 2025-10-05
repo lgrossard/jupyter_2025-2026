@@ -170,6 +170,7 @@ else
     echo -e "\e[38;5;69mMise à jour des fichiers...\e[0m"
     # git checkout HEAD .
     git fetch && git reset --hard
+    git pull
     echo
     echo -e "\e[38;5;83mLe cours est à jour\e[0m"
     echo "Vous pouvez fermer cet onglet"
