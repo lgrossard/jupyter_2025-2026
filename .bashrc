@@ -131,7 +131,13 @@ echo -e "\e[0m"
 echo -e ""
 echo
 
-cd ~/work
+cd
+
+if [[ -d "$HOME/work" ]]
+then
+  cd "$HOME/work" || printf 'Impossible de se placer dans le dossier %s\n' "$HOME/work"
+fi
+
 if [[ ! -d informatique_BUT1 ]]
 then
     echo -e "\e[38;5;69mTéléchargement des fichiers du cours d'informatique...\e[0m"
@@ -139,8 +145,17 @@ then
     git clone https://github.com/lgrossard/jupyter_2025-2026.git
     mv jupyter_2025-2026 informatique_BUT1
 
-    mv ~/.bashrc ~/.bashrc-old
+    if [[ -f ~/.bashrc ]]
+    then
+        mv ~/.bashrc ~/.bashrc-old
+    fi
+    # jupyter.unilim.fr :
+    if [[ -d "$HOME/work" ]]
+    then
     ln -s ~/work/informatique_BUT1/.bashrc ~/.bashrc
+    fi
+    # https://jupyterhub.intranet.unilim.fr/
+    ln -s ~/informatique_BUT1/.bashrc ~/.bash_profile
     mkdir personnel
     cd informatique_BUT1
     git checkout main
@@ -153,11 +168,11 @@ then
 else
     cd informatique_BUT1
     echo -e "\e[38;5;69mMise à jour des fichiers...\e[0m"
-    git checkout HEAD .
-    git pull
+    # git checkout HEAD .
+    git fetch && git reset --hard
     echo
     echo -e "\e[38;5;83mLe cours est à jour\e[0m"
     echo "Vous pouvez fermer cet onglet"
-    echo
-    cd ..
+    # echo
+    # cd ..
 fi
