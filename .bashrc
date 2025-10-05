@@ -163,7 +163,7 @@ then
     echo
     echo -e "\e[38;5;83mLe cours est prêt\e[0m"
     echo -e "Pour commencer, cliquez sur \e[1mmenu.ipynb\e[0m dans le dossier informatique_BUT1."
-    echo "Vous pouvez fermer cet onglet"
+    echo "Vous pouvez maintenant fermer cet onglet"
     echo
 else
     cd informatique_BUT1
